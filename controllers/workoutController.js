@@ -3,7 +3,8 @@ const Workout = require("../models/workoutModel");
 
 // get all workouts
 getAllWorkouts = async (req, res) => {
-	const workouts = await Workout.find({})
+	const user_id = req.user._id;
+	const workouts = await Workout.find({ user_id })
 		.sort({ createdAt: -1 })
 		.then((workouts) => res.status(200).json(workouts))
 		.catch((error) => res.status(400).json({ error: error.message }));
@@ -48,7 +49,8 @@ createWorkout = async (req, res) => {
 			.json({ error: "Please fill in all the fields !", emptyFields });
 	}
 
-	await Workout.create({ title, reps, load })
+	const user_id = req.user._id;
+	await Workout.create({ title, reps, load, user_id })
 		.then((workout) => res.status(200).json(workout))
 		.catch((error) => res.status(400).json({ error: error.message }));
 };
