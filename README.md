@@ -5,6 +5,7 @@
   </a>
 
   <h3 align="center">WORKOUT API</h3>
+  <br />
 </div>
 
 
@@ -14,14 +15,14 @@ This is the REST_API I build to serve the [WORKOUT](https://tuto-workout.vercel.
 ![](./images/screenshot.png)
 
 
-### Built With
+## Built With
 
 -  Node.js
 -  Express
 -  Mongo DB
 
 
-### Installation
+## Installation
 
 1. Clone the repo
    ```sh
@@ -48,7 +49,7 @@ To run this project, you will need to add the following environment variables to
 `SECRET` => The JWT signing secret
 
 
-# Author
+## Author
 - Website - [Portfolio](https://lyes-mersel.netlify.app)
 - Github - [@lyes-mersel](https://github.com/lyes-mersel)
 - LinkedIn - [@lyes-mersel](https://www.linkedin.com/in/lyes-mersel/)
