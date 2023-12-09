@@ -4,21 +4,25 @@ const express = require("express");
 const mongoose = require("mongoose");
 
 const corsConfig = require("./middlewares/corsConfig");
-const workoutRoutes = require("./routes/workouts");
+const requireAuth = require("./middlewares/requireAuth");
+
+const rootRouter = require("./routes/rout");
 const userRoutes = require("./routes/user");
+const workoutRoutes = require("./routes/workouts");
+
 
 // express app
 const app = express();
 
-// middleware
+// static folder
+app.use(express.static('public'));
+
+// middlewares
 app.use(corsConfig);
 app.use(express.json());
-app.use((req, res, next) => {
-	console.log(req.path, req.method);
-	next();
-});
 
 // routes
+app.use("/", rootRouter);
 app.use("/api/workouts", workoutRoutes);
 app.use("/api/user", userRoutes);
 

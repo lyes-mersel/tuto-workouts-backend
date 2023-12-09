@@ -9,7 +9,9 @@
 
 
 ## About The Project
-This is the REST API I build to serve the [WORKOUT](https://tuto-workout.vercel.app) website.
+This is the REST_API I build to serve the [WORKOUT](https://tuto-workout.vercel.app) website.
+
+![](./images/screenshot.png)
 
 
 ### Built With
